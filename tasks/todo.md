@@ -20,3 +20,9 @@ HTML validation passes. Workflow YAML validation passes. Lighthouse reports an a
 * [x] Validate, publish, and verify the live update.
 
 The platform\-agnostic copy and architecture visual pass HTML validation, a Lighthouse accessibility audit, and desktop and mobile visual checks.
+
+## Industry Pain Points Update
+
+* [x] Research credible public\-sector sources on legacy licensing and permitting challenges.
+* [x] Add buyer\-recognizable pain points paired with MTX Gov LPI responses.
+* [ ] Validate copy, responsive behavior, accessibility, deployment, and the live page.

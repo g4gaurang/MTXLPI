@@ -301,6 +301,58 @@
     .kicker { color: var(--cyan-dark); font-size: 0.75rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
     .section-dark .kicker { color: #6fd3e8; }
 
+    .challenge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .challenge-card {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 8px 28px rgba(8, 47, 73, 0.06);
+    }
+    .challenge-top { padding: 1.45rem 1.45rem 1.15rem; }
+    .challenge-number {
+      display: block;
+      margin-bottom: 0.65rem;
+      color: var(--cyan-dark);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .challenge-card h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
+    .challenge-card p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    .challenge-response {
+      margin-top: auto;
+      padding: 1rem 1.45rem 1.2rem;
+      border-top: 1px solid #c9e3e7;
+      background: #eef8f8;
+    }
+    .challenge-response strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--navy);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .research-note {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      padding: 1rem 1.2rem;
+      color: #385463;
+      border-left: 4px solid var(--cyan);
+      background: #edf5f7;
+      border-radius: 0 0.75rem 0.75rem 0;
+      font-size: 0.82rem;
+    }
+    .research-links { display: flex; flex: 0 0 auto; gap: 1rem; flex-wrap: wrap; }
+    .research-links a { color: var(--blue); font-weight: 800; }
+
     .lifecycle {
       position: relative;
       display: grid;
@@ -501,6 +553,7 @@
       .workbench { max-width: 43rem; }
       .lifecycle { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
       .lifecycle::before { display: none; }
+      .challenge-grid { grid-template-columns: repeat(2, 1fr); }
       .capability-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 42rem) {
@@ -512,11 +565,13 @@
       .workspace-grid { grid-template-columns: 1fr; }
       .side-panel { grid-template-columns: repeat(2, 1fr); }
       .proof-grid, .capability-grid, .roadmap { grid-template-columns: 1fr; }
+      .challenge-grid { grid-template-columns: 1fr; }
       .proof-item { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
       .proof-item:last-child { border-bottom: 0; }
       .lifecycle { grid-template-columns: repeat(2, 1fr); }
       .foundation-row { grid-template-columns: 1fr; }
       .system-row { grid-template-columns: repeat(2, 1fr); }
+      .research-note { align-items: flex-start; flex-direction: column; }
       .cta-grid { align-items: flex-start; flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -535,6 +590,7 @@
         <span>MTX Gov LPI</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#challenges">Challenges</a>
         <a href="#lifecycle">Lifecycle</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#architecture">Architecture</a>
@@ -544,6 +600,7 @@
       <details class="mobile-nav">
         <summary>Menu</summary>
         <nav class="mobile-nav-menu" aria-label="Mobile navigation">
+          <a href="#challenges">Challenges</a>
           <a href="#lifecycle">Lifecycle</a>
           <a href="#capabilities">Capabilities</a>
           <a href="#architecture">Architecture</a>
@@ -611,6 +668,73 @@
         <div class="proof-item"><strong>20+ states</strong><span>with LPI solutions delivered</span></div>
         <div class="proof-item"><strong>30+</strong><span>public-sector licensing systems implemented</span></div>
         <div class="proof-item"><strong>60–120 days</strong><span>typical initial program launch, depending on scope and integrations</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="challenges">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Why agencies are modernizing</span>
+          <h2>Legacy LPI operations create friction for applicants and staff.</h2>
+          <p>Common challenges tend to sit between the public experience, regulatory workflow, and the systems agencies already use. MTX Gov LPI addresses that middle layer without requiring every authoritative platform to be replaced.</p>
+        </div>
+        <div class="challenge-grid">
+          <article class="challenge-card">
+            <div class="challenge-top">
+              <span class="challenge-number">Industry pressure 01</span>
+              <h3>Paper and manual intake</h3>
+              <p>Applicants may navigate static forms, unclear requirements, separate payment steps, and limited status information.</p>
+            </div>
+            <div class="challenge-response"><strong>MTX Gov LPI response</strong><p>Guided applications bring rules, fees, payments, document upload, and status into a coordinated digital experience.</p></div>
+          </article>
+          <article class="challenge-card">
+            <div class="challenge-top">
+              <span class="challenge-number">Industry pressure 02</span>
+              <h3>Disconnected tools and data</h3>
+              <p>Staff may move between document repositories, financial tools, GIS, identity services, and case platforms to complete one review.</p>
+            </div>
+            <div class="challenge-response"><strong>MTX Gov LPI response</strong><p>A configurable workflow layer connects through APIs while each agency system retains its designated records.</p></div>
+          </article>
+          <article class="challenge-card">
+            <div class="challenge-top">
+              <span class="challenge-number">Industry pressure 03</span>
+              <h3>Review queues with limited visibility</h3>
+              <p>Missing documents, handoffs, assignments, and aging work can be difficult to track across email, spreadsheets, and separate queues.</p>
+            </div>
+            <div class="challenge-response"><strong>MTX Gov LPI response</strong><p>Role-based workspaces, checklists, routing, and recommended dashboards make work status easier to monitor.</p></div>
+          </article>
+          <article class="challenge-card">
+            <div class="challenge-top">
+              <span class="challenge-number">Industry pressure 04</span>
+              <h3>Field work separated from the case</h3>
+              <p>Inspection scheduling, findings, evidence, notifications, and corrective actions may be managed through disconnected channels.</p>
+            </div>
+            <div class="challenge-response"><strong>MTX Gov LPI response</strong><p>Inspection workflows connect assignments, field results, evidence, findings, and follow-up activity to the regulatory record.</p></div>
+          </article>
+          <article class="challenge-card">
+            <div class="challenge-top">
+              <span class="challenge-number">Industry pressure 05</span>
+              <h3>Policy change creates system work</h3>
+              <p>Fee schedules, required documents, notices, and approval paths change, while older applications can be difficult to adapt.</p>
+            </div>
+            <div class="challenge-response"><strong>MTX Gov LPI response</strong><p>Configurable rules and workflows support program changes and phased expansion across license and permit types.</p></div>
+          </article>
+          <article class="challenge-card">
+            <div class="challenge-top">
+              <span class="challenge-number">Industry pressure 06</span>
+              <h3>Limited transparency and verification</h3>
+              <p>Applicants seek updates, staff respond to status inquiries, and the public needs a dependable way to verify regulatory standing.</p>
+            </div>
+            <div class="challenge-response"><strong>MTX Gov LPI response</strong><p>Self-service status, notifications, digital credentials, and public verification provide clearer access to approved information.</p></div>
+          </article>
+        </div>
+        <aside class="research-note" aria-label="Industry research sources">
+          <span>Industry context is informed by public-sector research on outdated systems, fragmented data, disconnected tools, manual reviews, interoperability, and applicant transparency.</span>
+          <span class="research-links">
+            <a href="https://permitting.innovation.gov/resources/action-plan/">Read the Permitting Technology Action Plan</a>
+            <a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/07/CEQ-E-NEPA-Report-to-Congress_Final-508.pdf">Read the permitting technology report</a>
+          </span>
+        </aside>
       </div>
     </section>
 
