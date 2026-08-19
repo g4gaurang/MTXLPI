@@ -12,3 +12,9 @@
 ## Review
 
 HTML validation passes. Workflow YAML validation passes. Lighthouse reports an accessibility score of 100 with no failed binary audits. Manual desktop, keyboard, and 400px mobile checks pass, including the responsive navigation. Repository checks confirm one Pages workflow, no uploaded source documents, and no obsolete product terminology. The GitHub Pages deployment completed successfully, and the live page returned HTTP 200 with content matching the local release.
+
+## Platform\-Agnostic Update
+
+* [x] Remove Microsoft\-only positioning from metadata, hero copy, and architecture copy.
+* [x] Update the architecture visual to show Microsoft, Salesforce, and AWS technology options.
+* [ ] Validate, publish, and verify the live update.

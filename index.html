@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MTX Gov LPI | Licensing, Permitting &amp; Inspections</title>
-  <meta name="description" content="MTX Gov LPI is a configurable Microsoft Power Platform engagement and workflow layer for government licensing, permitting, and inspections.">
+  <meta name="description" content="MTX Gov LPI is a configurable, platform-flexible engagement and workflow layer for government licensing, permitting, and inspections.">
   <meta name="theme-color" content="#082f49">
   <style>
     :root {
@@ -381,6 +381,35 @@
     .stack-layer strong { display: block; margin-bottom: 0.15rem; }
     .stack-layer span { display: block; color: var(--muted); font-size: 0.82rem; }
     .stack-layer.platform span { color: #e0f4f7; }
+    .foundation-wrap {
+      padding: 0.9rem;
+      border: 1px solid #416278;
+      border-radius: 0.9rem;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .stack-caption {
+      display: block;
+      margin-bottom: 0.65rem;
+      color: #b8cdd6;
+      font-size: 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .foundation-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .foundation {
+      min-height: 4.4rem;
+      display: grid;
+      place-items: center;
+      padding: 0.7rem;
+      color: var(--white);
+      border: 1px solid #6791a5;
+      border-radius: 0.7rem;
+      background: #12384e;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
     .system-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
     .system {
       min-height: 4.6rem;
@@ -486,6 +515,7 @@
       .proof-item { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
       .proof-item:last-child { border-bottom: 0; }
       .lifecycle { grid-template-columns: repeat(2, 1fr); }
+      .foundation-row { grid-template-columns: 1fr; }
       .system-row { grid-template-columns: repeat(2, 1fr); }
       .cta-grid { align-items: flex-start; flex-direction: column; }
     }
@@ -537,7 +567,7 @@
             <a class="button button-primary" href="#capabilities">Explore product capabilities</a>
             <a class="button button-secondary" href="#architecture">View the integration model</a>
           </div>
-          <p class="hero-detail">A configurable Microsoft Power Platform engagement and workflow layer for state and local government.</p>
+          <p class="hero-detail">A configurable engagement and workflow layer available on Microsoft, Salesforce, and AWS technology foundations.</p>
         </div>
 
         <div class="workbench" role="img" aria-label="Illustrative MTX Gov LPI staff workspace showing an application review checklist">
@@ -631,13 +661,21 @@
         <div class="architecture-copy">
           <span class="kicker">Architecture &amp; integration model</span>
           <h2>An engagement layer, not another system of record.</h2>
-          <p>MTX Gov LPI is built on Microsoft Power Platform, including Power Pages, Power Apps, and Dataverse. It orchestrates digital experiences and workflow through modular APIs while authoritative agency platforms retain their designated records.</p>
+          <p>MTX Gov LPI can be delivered on Microsoft, Salesforce, or AWS technology foundations based on agency architecture and delivery needs. Across each option, it coordinates digital experiences and workflow through modular APIs while authoritative agency platforms retain their designated records.</p>
           <p class="boundary-note"><strong>Agency staff retain decision and approval authority.</strong> MTX Gov LPI supports review and adjudication workflows; it does not replace agency adjudication processes.</p>
         </div>
         <div class="stack" role="group" aria-label="MTX Gov LPI architecture stack">
           <div class="stack-layer"><strong>Constituent and public experiences</strong><span>Applications, payments, uploads, status, renewals, complaints, and public verification</span></div>
           <div class="stack-layer"><strong>Agency operations</strong><span>Review, issuance, inspections, compliance, enforcement, dashboards, and administration</span></div>
-          <div class="stack-layer platform"><strong>MTX Gov LPI on Microsoft Power Platform</strong><span>Power Pages + Power Apps + Dataverse + configurable workflow + API integration</span></div>
+          <div class="stack-layer platform"><strong>MTX Gov LPI configurable product layer</strong><span>Regulatory workflows + role-based experiences + APIs + analytics</span></div>
+          <div class="foundation-wrap">
+            <span class="stack-caption">Technology foundation options</span>
+            <div class="foundation-row" role="group" aria-label="Available technology foundation options">
+              <div class="foundation">Microsoft</div>
+              <div class="foundation">Salesforce</div>
+              <div class="foundation">AWS</div>
+            </div>
+          </div>
           <div class="system-row" role="group" aria-label="Integrated agency systems of record">
             <div class="system">Financial &amp; payment</div>
             <div class="system">Document management</div>
