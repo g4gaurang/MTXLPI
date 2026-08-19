@@ -17,4 +17,6 @@ HTML validation passes. Workflow YAML validation passes. Lighthouse reports an a
 
 * [x] Remove Microsoft\-only positioning from metadata, hero copy, and architecture copy.
 * [x] Update the architecture visual to show Microsoft, Salesforce, and AWS technology options.
-* [ ] Validate, publish, and verify the live update.
+* [x] Validate, publish, and verify the live update.
+
+The platform\-agnostic copy and architecture visual pass HTML validation, a Lighthouse accessibility audit, and desktop and mobile visual checks.
