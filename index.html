@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -101,6 +101,43 @@
     }
     .nav-links a { padding-block: 0.8rem; text-decoration: none; }
     .nav-links a:hover { color: var(--cyan-dark); }
+    .mobile-nav { display: none; position: relative; }
+    .mobile-nav summary {
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+      display: grid;
+      place-items: center;
+      padding: 0.55rem 0.8rem;
+      color: var(--navy);
+      border: 2px solid #82a9bb;
+      border-radius: 0.65rem;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    .mobile-nav summary::-webkit-details-marker { display: none; }
+    .mobile-nav-menu {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      right: 0;
+      width: min(18rem, calc(100vw - 1.5rem));
+      display: grid;
+      padding: 0.55rem;
+      border: 1px solid var(--line);
+      border-radius: 0.85rem;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .mobile-nav-menu a {
+      min-height: 2.75rem;
+      display: flex;
+      align-items: center;
+      padding: 0.65rem 0.8rem;
+      border-radius: 0.55rem;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .mobile-nav-menu a:hover { color: var(--white); background: var(--navy); }
     .button {
       min-height: 2.75rem;
       display: inline-flex;
@@ -235,6 +272,12 @@
     .case-row span { display: flex; justify-content: space-between; gap: 0.5rem; color: var(--muted); font-size: 0.72rem; }
     .meter { height: 0.45rem; margin-top: 0.35rem; overflow: hidden; background: #e7eef2; border-radius: 999px; }
     .meter i { display: block; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--blue)); border-radius: inherit; }
+    .width-100 { width: 100%; }
+    .width-82 { width: 82%; }
+    .width-66 { width: 66%; }
+    .width-64 { width: 64%; }
+    .width-48 { width: 48%; }
+    .width-18 { width: 18%; }
 
     .proof { color: var(--white); background: var(--navy); }
     .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
@@ -424,6 +467,7 @@
 
     @media (max-width: 62rem) {
       .nav-links { display: none; }
+      .mobile-nav { display: block; margin-left: auto; }
       .hero-grid, .architecture-grid, .analytics-grid { grid-template-columns: 1fr; }
       .workbench { max-width: 43rem; }
       .lifecycle { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
@@ -434,7 +478,7 @@
       .container { width: min(100% - 1.5rem, 73rem); }
       .nav { min-height: 4.3rem; }
       .brand span:last-child { font-size: 0.9rem; }
-      .nav > .button { padding-inline: 0.75rem; font-size: 0.78rem; }
+      .nav > .button { display: none; }
       .hero { padding-top: 3.8rem; }
       .workspace-grid { grid-template-columns: 1fr; }
       .side-panel { grid-template-columns: repeat(2, 1fr); }
@@ -456,7 +500,7 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="MTX Gov LPI home">
+      <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true">MTX</span>
         <span>MTX Gov LPI</span>
       </a>
@@ -467,6 +511,17 @@
         <a href="#analytics">Analytics</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-menu" aria-label="Mobile navigation">
+          <a href="#lifecycle">Lifecycle</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#analytics">Analytics</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#contact">Discuss MTX Gov LPI</a>
+        </nav>
+      </details>
       <a class="button button-primary" href="#contact">Discuss MTX Gov LPI</a>
     </div>
   </header>
@@ -485,7 +540,7 @@
           <p class="hero-detail">A configurable Microsoft Power Platform engagement and workflow layer for state and local government.</p>
         </div>
 
-        <div class="workbench" aria-label="Illustrative MTX Gov LPI staff workspace">
+        <div class="workbench" role="img" aria-label="Illustrative MTX Gov LPI staff workspace showing an application review checklist">
           <div class="workbench-top">
             <strong>Application review</strong>
             <span class="status-pill">Ready for staff review</span>
@@ -501,19 +556,19 @@
               <h2>Review checklist</h2>
               <div class="case-row">
                 <span><b>Application intake</b><b>Complete</b></span>
-                <div class="meter"><i style="width:100%"></i></div>
+                <div class="meter"><i class="width-100"></i></div>
               </div>
               <div class="case-row">
                 <span><b>Document routing</b><b>Complete</b></span>
-                <div class="meter"><i style="width:100%"></i></div>
+                <div class="meter"><i class="width-100"></i></div>
               </div>
               <div class="case-row">
                 <span><b>Agency review</b><b>In progress</b></span>
-                <div class="meter"><i style="width:64%"></i></div>
+                <div class="meter"><i class="width-64"></i></div>
               </div>
               <div class="case-row">
                 <span><b>Decision &amp; issuance</b><b>Pending</b></span>
-                <div class="meter"><i style="width:18%"></i></div>
+                <div class="meter"><i class="width-18"></i></div>
               </div>
             </div>
           </div>
@@ -579,11 +634,11 @@
           <p>MTX Gov LPI is built on Microsoft Power Platform, including Power Pages, Power Apps, and Dataverse. It orchestrates digital experiences and workflow through modular APIs while authoritative agency platforms retain their designated records.</p>
           <p class="boundary-note"><strong>Agency staff retain decision and approval authority.</strong> MTX Gov LPI supports review and adjudication workflows; it does not replace agency adjudication processes.</p>
         </div>
-        <div class="stack" aria-label="MTX Gov LPI architecture stack">
+        <div class="stack" role="group" aria-label="MTX Gov LPI architecture stack">
           <div class="stack-layer"><strong>Constituent and public experiences</strong><span>Applications, payments, uploads, status, renewals, complaints, and public verification</span></div>
           <div class="stack-layer"><strong>Agency operations</strong><span>Review, issuance, inspections, compliance, enforcement, dashboards, and administration</span></div>
           <div class="stack-layer platform"><strong>MTX Gov LPI on Microsoft Power Platform</strong><span>Power Pages + Power Apps + Dataverse + configurable workflow + API integration</span></div>
-          <div class="system-row" aria-label="Integrated agency systems of record">
+          <div class="system-row" role="group" aria-label="Integrated agency systems of record">
             <div class="system">Financial &amp; payment</div>
             <div class="system">Document management</div>
             <div class="system">GIS &amp; address data</div>
@@ -603,7 +658,7 @@
           <p>The metrics below are illustrative recommendations for an agency-configured dashboard. They are not production results.</p>
         </div>
         <div class="analytics-grid">
-          <div class="dashboard" aria-label="Illustrative recommended metrics dashboard">
+          <div class="dashboard" role="img" aria-label="Illustrative recommended metrics dashboard for program operations">
             <div class="dashboard-header"><strong>Program operations</strong><span class="illustrative">Illustrative</span></div>
             <div class="metric-grid">
               <div class="metric"><strong>Application flow</strong><span>Submitted, incomplete, in review, decided</span></div>
@@ -612,9 +667,9 @@
               <div class="metric"><strong>Renewal posture</strong><span>Upcoming, submitted, overdue, completed</span></div>
             </div>
             <div class="metric-bars" aria-hidden="true">
-              <div class="metric-bar"><span><b>Applications by stage</b><b>Example view</b></span><i style="width:82%"></i></div>
-              <div class="metric-bar"><span><b>Inspection completion</b><b>Example view</b></span><i style="width:66%"></i></div>
-              <div class="metric-bar"><span><b>Complaint resolution</b><b>Example view</b></span><i style="width:48%"></i></div>
+              <div class="metric-bar"><span><b>Applications by stage</b><b>Example view</b></span><i class="width-82"></i></div>
+              <div class="metric-bar"><span><b>Inspection completion</b><b>Example view</b></span><i class="width-66"></i></div>
+              <div class="metric-bar"><span><b>Complaint resolution</b><b>Example view</b></span><i class="width-48"></i></div>
             </div>
           </div>
           <div class="metric-list">
