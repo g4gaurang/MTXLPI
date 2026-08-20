@@ -25,4 +25,16 @@ The platform\-agnostic copy and architecture visual pass HTML validation, a Ligh
 
 * [x] Research credible public\-sector sources on legacy licensing and permitting challenges.
 * [x] Add buyer\-recognizable pain points paired with MTX Gov LPI responses.
-* [ ] Validate copy, responsive behavior, accessibility, deployment, and the live page.
+* [x] Validate copy, responsive behavior, accessibility, deployment, and the live page.
+
+## LPI Capability Refresh
+
+* [x] Review the current landing page, supplied MTX materials, and the requested LPI capability scope.
+* [x] Refine the hero and interactive workspace for licensing, permitting, plan review, and field operations.
+* [x] Replace the capability cards with the requested twelve public\-sector LPI capabilities.
+* [x] Add internal source comments to quantitative claims that need publication validation.
+* [x] Validate HTML, links, desktop/mobile layout, keyboard behavior, and browser console output.
+
+## Review
+
+HTML parsing and whitespace validation pass. Browser testing confirms desktop and 400px mobile layouts, anchor navigation, no horizontal overflow, keyboard and mouse operation for each capability detail card, and no browser console errors.
