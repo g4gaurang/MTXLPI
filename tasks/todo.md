@@ -42,6 +42,10 @@ HTML parsing and whitespace validation pass. Browser testing confirms desktop an
 ## Interactive Hero Update
 
 * [x] Confirm that the deployed hero visual and card interactions need stronger visual prominence.
-* [ ] Add a visible permitting-focused buyer image alongside the workspace.
-* [ ] Add keyboard-accessible workspace views for plan review, inspections, and GIS.
-* [ ] Validate the revised desktop and mobile experience.
+* [x] Add a visible permitting-focused buyer image alongside the workspace.
+* [x] Add keyboard-accessible workspace views for plan review, inspections, and GIS.
+* [x] Validate the revised desktop and mobile experience.
+
+## Review
+
+Browser testing confirms a visible building-plan image, working plan-review, field-operations, and location-intelligence controls by mouse and keyboard, responsive desktop and 400px mobile layouts without overflow, and no browser console errors.
