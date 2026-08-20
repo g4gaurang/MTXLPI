@@ -6,6 +6,7 @@
   <title>MTX Gov LPI | Licensing, Permitting &amp; Inspections</title>
   <meta name="description" content="MTX Gov LPI is a configurable, platform-flexible engagement and workflow layer for government licensing, permitting, and inspections.">
   <meta name="theme-color" content="#082f49">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23082f49'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='white'%3EMTX%3C/text%3E%3C/svg%3E">
   <style>
     :root {
       --navy: #082f49;
@@ -222,7 +223,9 @@
       padding: 1.15rem;
       border: 1px solid #bfd6df;
       border-radius: 1.8rem;
-      background: rgba(255, 255, 255, 0.94);
+      background:
+        linear-gradient(135deg, rgba(6, 34, 53, 0.12), rgba(8, 145, 178, 0.06)),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85") center / cover;
       box-shadow: var(--shadow);
     }
     .workbench::before {
@@ -245,6 +248,7 @@
       gap: 1rem;
       padding: 0.5rem 0.4rem 1rem;
       border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
     }
     .workbench-top strong { color: var(--navy); }
     .status-pill {
@@ -255,7 +259,7 @@
       font-size: 0.72rem;
       font-weight: 800;
     }
-    .workspace-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 0.9rem; padding-top: 1rem; }
+    .workspace-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 0.9rem; padding-top: 1rem; background: rgba(255, 255, 255, 0.88); }
     .side-panel { display: grid; align-content: start; gap: 0.45rem; }
     .side-item {
       padding: 0.72rem;
@@ -398,6 +402,33 @@
       background: var(--white);
       box-shadow: 0 8px 28px rgba(8, 47, 73, 0.06);
     }
+    details.card { padding: 0; overflow: hidden; }
+    .card-summary { display: block; padding: 1.55rem; cursor: pointer; list-style: none; }
+    .card-summary::-webkit-details-marker { display: none; }
+    .card-summary::after {
+      content: "View capability details +";
+      display: block;
+      margin-top: 1rem;
+      color: var(--cyan-dark);
+      font-size: 0.76rem;
+      font-weight: 850;
+    }
+    details[open] .card-summary::after { content: "Hide capability details −"; }
+    .card-details {
+      margin: 0;
+      padding: 0 1.55rem 1.45rem;
+      color: var(--muted);
+      border-top: 1px solid #d9e8ed;
+      font-size: 0.82rem;
+    }
+    .card-details ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem 1rem;
+      margin: 0;
+      padding: 1rem 0 0 1.1rem;
+    }
+    .card-details li::marker { color: var(--cyan-dark); }
     .card-icon {
       width: 2.65rem;
       height: 2.65rem;
@@ -627,34 +658,34 @@
           <p class="hero-detail">A configurable engagement and workflow layer available on Microsoft, Salesforce, and AWS technology foundations.</p>
         </div>
 
-        <div class="workbench" role="img" aria-label="Illustrative MTX Gov LPI staff workspace showing an application review checklist">
+        <div class="workbench" role="img" aria-label="Illustrative MTX Gov LPI workspace for building permit plan review, inspections, and field operations">
           <div class="workbench-top">
-            <strong>Application review</strong>
-            <span class="status-pill">Ready for staff review</span>
+            <strong>Building permit plan review</strong>
+            <span class="status-pill">Technical review in progress</span>
           </div>
           <div class="workspace-grid">
             <div class="side-panel" aria-hidden="true">
               <div class="side-item active">Overview</div>
-              <div class="side-item">Documents</div>
-              <div class="side-item">Payments</div>
-              <div class="side-item">Inspections</div>
+              <div class="side-item">Plans</div>
+              <div class="side-item">Location</div>
+              <div class="side-item">Field work</div>
             </div>
             <div class="case-panel">
               <h2>Review checklist</h2>
               <div class="case-row">
-                <span><b>Application intake</b><b>Complete</b></span>
+                <span><b>Application &amp; fees</b><b>Complete</b></span>
                 <div class="meter"><i class="width-100"></i></div>
               </div>
               <div class="case-row">
-                <span><b>Document routing</b><b>Complete</b></span>
+                <span><b>Plan routing</b><b>Complete</b></span>
                 <div class="meter"><i class="width-100"></i></div>
               </div>
               <div class="case-row">
-                <span><b>Agency review</b><b>In progress</b></span>
+                <span><b>Fire &amp; zoning review</b><b>In progress</b></span>
                 <div class="meter"><i class="width-64"></i></div>
               </div>
               <div class="case-row">
-                <span><b>Decision &amp; issuance</b><b>Pending</b></span>
+                <span><b>Inspection scheduling</b><b>Pending</b></span>
                 <div class="meter"><i class="width-18"></i></div>
               </div>
             </div>
@@ -665,8 +696,11 @@
 
     <section class="proof" aria-label="MTX Gov LPI experience">
       <div class="container proof-grid">
+        <!-- INTERNAL VALIDATION REQUIRED: confirm supporting evidence before external publication -->
         <div class="proof-item"><strong>20+ states</strong><span>with LPI solutions delivered</span></div>
+        <!-- INTERNAL VALIDATION REQUIRED: confirm supporting evidence before external publication -->
         <div class="proof-item"><strong>30+</strong><span>public-sector licensing systems implemented</span></div>
+        <!-- INTERNAL VALIDATION REQUIRED: confirm supporting evidence before external publication -->
         <div class="proof-item"><strong>60–120 days</strong><span>typical initial program launch, depending on scope and integrations</span></div>
       </div>
     </section>
@@ -764,18 +798,18 @@
           <p>Reusable patterns support applicants, licensees, inspectors, reviewers, program leaders, and members of the public.</p>
         </div>
         <div class="capability-grid">
-          <article class="card"><span class="card-icon" aria-hidden="true">01</span><h3>Guided digital applications</h3><p>Dynamic forms present requirements and next steps based on program rules and applicant responses.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">02</span><h3>Fees &amp; payments</h3><p>Calculate fees, connect to agency-approved payment services, and return confirmation and receipt status.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">03</span><h3>Documents &amp; routing</h3><p>Accept uploads, validate formats, track document status, and route files to agency review and storage.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">04</span><h3>Application review</h3><p>Assign work, apply due-diligence checklists, request revisions, and support approval or denial workflows.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">05</span><h3>Issuance &amp; public verification</h3><p>Generate digital or printable credentials and publish searchable verification information approved for release.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">06</span><h3>Renewals &amp; amendments</h3><p>Pre-populate renewal forms, manage changes, collect associated fees, and issue updated credentials.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">07</span><h3>Inspections</h3><p>Coordinate requests, assignment, scheduling, field results, photos, findings, and follow-up work.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">08</span><h3>Complaints &amp; investigations</h3><p>Receive public complaints and give staff tools to assign, investigate, track, and resolve submissions.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">09</span><h3>Compliance &amp; enforcement</h3><p>Track violations, corrective actions, deadlines, enforcement activity, notices, and related case history.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">10</span><h3>Staff workspaces</h3><p>Bring review queues, tasks, correspondence, deadlines, and case context into role-based views.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">11</span><h3>Dashboards &amp; reporting</h3><p>Present configurable operational metrics for volume, timeliness, inspections, payments, and compliance.</p></article>
-          <article class="card"><span class="card-icon" aria-hidden="true">12</span><h3>APIs &amp; notifications</h3><p>Exchange data with agency platforms and provide status updates, reminders, and review requests.</p></article>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">01</span><h3>Guided Digital Applications</h3><p>Dynamic forms adapt to the program, license or permit type, applicant responses, and regulatory requirements.</p></summary><div class="card-details"><ul><li>Save and resume</li><li>Available data pre-population</li><li>Required-field guidance</li><li>Submission-readiness checks</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">02</span><h3>Rules, Fees &amp; Payments</h3><p>Apply configurable prerequisites and fee schedules through agency-neutral payment connections.</p></summary><div class="card-details"><ul><li>Calculated fees</li><li>Waivers and adjustments</li><li>Refund support</li><li>Receipts and reconciliation</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">03</span><h3>Documents &amp; Plans</h3><p>Collect supporting documents, drawings, site plans, technical records, and evidence for each case.</p></summary><div class="card-details"><ul><li>File validation</li><li>Version tracking</li><li>Document status</li><li>Reviewer and repository routing</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">04</span><h3>Application &amp; Plan Review</h3><p>Coordinate administrative, technical, and multi-discipline review for building, zoning, fire, environmental, public works, and land-use programs.</p></summary><div class="card-details"><ul><li>Reviewer assignments</li><li>Plan markup and comments</li><li>Correction cycles</li><li>Resubmissions and decisions</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">05</span><h3>Issuance &amp; Public Verification</h3><p>Issue licenses, permits, certificates, approvals, and digital credentials with agency-approved public status information.</p></summary><div class="card-details"><ul><li>Issuance history</li><li>Printable and digital artifacts</li><li>Status verification</li><li>Renew, suspend, reinstate, expire, or revoke where configured</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">06</span><h3>Renewals &amp; Amendments</h3><p>Support pre-populated renewals, amendments, expiration tracking, reinstatement, and associated fees.</p></summary><div class="card-details"><ul><li>Late renewals</li><li>Changes and updates</li><li>Renewal reminders</li><li>Updated issuance</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">07</span><h3>Inspections &amp; Field Operations</h3><p>Connect inspection requests, scheduling, assignment, configurable checklists, mobile field work, and follow-up to the regulatory record.</p></summary><div class="card-details"><ul><li>Photos and evidence</li><li>Findings and correction notices</li><li>Reinspections</li><li>Field routing where deployed</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">08</span><h3>Complaints &amp; Investigations</h3><p>Offer configurable complaint intake, triage, assignment, investigation, correspondence, and case history.</p></summary><div class="card-details"><ul><li>Evidence collection</li><li>Findings</li><li>Case activity</li><li>Program-specific workflows</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">09</span><h3>Compliance &amp; Enforcement</h3><p>Track violations, corrective action, deadlines, notices, citations, penalties, and enforcement history for agency action.</p></summary><div class="card-details"><ul><li>Hearings or appeals</li><li>Compliance deadlines</li><li>Case closure</li><li>Agency decision authority</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">10</span><h3>GIS &amp; Location Intelligence</h3><p>Link records to parcels, addresses, jurisdiction boundaries, zoning context, inspection territories, and regulated locations.</p></summary><div class="card-details"><ul><li>Map-based review</li><li>Location-driven rules</li><li>Field routing context</li><li>Map workload views</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">11</span><h3>Staff Workspaces &amp; Analytics</h3><p>Give agency staff role-based queues, tasks, correspondence, deadlines, workload visibility, and operational metrics.</p></summary><div class="card-details"><ul><li>Agency and applicant wait time</li><li>Inspection activity</li><li>Fee and renewal posture</li><li>Compliance and SLA metrics</li></ul></div></details>
+          <details class="card"><summary class="card-summary"><span class="card-icon" aria-hidden="true">12</span><h3>APIs, Integrations &amp; Notifications</h3><p>Connect identity, GIS, financial, document, case, and reporting platforms while sending relevant agency notices.</p></summary><div class="card-details"><ul><li>Email and SMS notifications</li><li>Status alerts and RFIs</li><li>Inspection reminders</li><li>Renewal and decision notices</li></ul></div></details>
         </div>
       </div>
     </section>
@@ -852,9 +886,10 @@
           <p>Phased configuration lets agencies align adoption with policy, program readiness, integration dependencies, and funding.</p>
         </div>
         <div class="roadmap">
+          <!-- INTERNAL VALIDATION REQUIRED: confirm supporting evidence before external publication -->
           <article class="roadmap-card"><span class="roadmap-tag">Stage 1 · Launch</span><h3>Establish a priority program</h3><p>Configure intake, payment, documents, review, issuance, core integrations, reporting, security, accessibility, testing, and training. A typical initial program launch is 60–120 days, depending on scope and integrations.</p></article>
           <article class="roadmap-card"><span class="roadmap-tag">Stage 2 · Expand</span><h3>Add regulatory workflows</h3><p>Extend inspections, complaints, compliance, renewals, amendments, public verification, and additional license or permit types using shared patterns.</p></article>
-          <article class="roadmap-card"><span class="roadmap-tag">Stage 3 · Assist</span><h3>Introduce governed AI assistance</h3><p>Support intake guidance, document classification and review, and complaint triage with privacy controls, audit history, and staff review.</p></article>
+          <article class="roadmap-card"><span class="roadmap-tag">Stage 3 · Assist</span><h3>Introduce governed AI assistance</h3><p>Support applicant guidance, document classification and extraction, plan review assistance, complaint triage, reviewer summaries, suggested correspondence, and exception identification with privacy controls, audit history, and staff review.</p></article>
         </div>
         <p class="authority">AI is assistive. Authorized agency staff retain decision and approval authority for licensing, permitting, inspections, compliance, and enforcement actions.</p>
       </div>
