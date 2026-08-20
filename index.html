@@ -218,16 +218,38 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
+    .hero-visual { position: relative; padding-top: 1.4rem; }
+    .hero-photo {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #bfd6df;
+      border-radius: 1.8rem;
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 17rem;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-photo figcaption {
+      padding: 0.75rem 1rem;
+      color: #d6e5eb;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
     .workbench {
       position: relative;
+      z-index: 1;
       padding: 1.15rem;
       border: 1px solid #bfd6df;
       border-radius: 1.8rem;
-      background:
-        linear-gradient(135deg, rgba(6, 34, 53, 0.12), rgba(8, 145, 178, 0.06)),
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85") center / cover;
+      background: rgba(255, 255, 255, 0.98);
       box-shadow: var(--shadow);
     }
+    .hero-visual .workbench { margin: -3.25rem 1rem 0; }
     .workbench::before {
       content: "CONFIGURABLE WORKSPACE";
       position: absolute;
@@ -260,6 +282,24 @@
       font-weight: 800;
     }
     .workspace-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 0.9rem; padding-top: 1rem; background: rgba(255, 255, 255, 0.88); }
+    .workspace-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+    }
+    .workspace-tab {
+      min-height: 2.45rem;
+      padding: 0.5rem 0.7rem;
+      color: var(--blue);
+      border: 1px solid #9bc5d2;
+      border-radius: 999px;
+      background: var(--white);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+    .workspace-tab[aria-pressed="true"] { color: var(--white); border-color: var(--cyan-dark); background: var(--cyan-dark); }
     .side-panel { display: grid; align-content: start; gap: 0.45rem; }
     .side-item {
       padding: 0.72rem;
@@ -581,7 +621,7 @@
       .nav-links { display: none; }
       .mobile-nav { display: block; margin-left: auto; }
       .hero-grid, .architecture-grid, .analytics-grid { grid-template-columns: 1fr; }
-      .workbench { max-width: 43rem; }
+      .hero-visual { max-width: 43rem; }
       .lifecycle { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
       .lifecycle::before { display: none; }
       .challenge-grid { grid-template-columns: repeat(2, 1fr); }
@@ -593,6 +633,8 @@
       .brand span:last-child { font-size: 0.9rem; }
       .nav > .button { display: none; }
       .hero { padding-top: 3.8rem; }
+      .hero-photo img { height: 13rem; }
+      .hero-visual .workbench { margin: -2.25rem 0.5rem 0; }
       .workspace-grid { grid-template-columns: 1fr; }
       .side-panel { grid-template-columns: repeat(2, 1fr); }
       .proof-grid, .capability-grid, .roadmap { grid-template-columns: 1fr; }
@@ -658,35 +700,46 @@
           <p class="hero-detail">A configurable engagement and workflow layer available on Microsoft, Salesforce, and AWS technology foundations.</p>
         </div>
 
-        <div class="workbench" role="img" aria-label="Illustrative MTX Gov LPI workspace for building permit plan review, inspections, and field operations">
-          <div class="workbench-top">
-            <strong>Building permit plan review</strong>
-            <span class="status-pill">Technical review in progress</span>
-          </div>
-          <div class="workspace-grid">
-            <div class="side-panel" aria-hidden="true">
-              <div class="side-item active">Overview</div>
-              <div class="side-item">Plans</div>
-              <div class="side-item">Location</div>
-              <div class="side-item">Field work</div>
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Building plans and design materials used in a permitting review">
+            <figcaption>Support plan review and coordinated permitting work.</figcaption>
+          </figure>
+          <div class="workbench" aria-label="Interactive MTX Gov LPI workspace example">
+            <div class="workbench-top">
+              <strong id="workspace-title">Building permit plan review</strong>
+              <span class="status-pill" id="workspace-status">Technical review in progress</span>
             </div>
-            <div class="case-panel">
-              <h2>Review checklist</h2>
-              <div class="case-row">
-                <span><b>Application &amp; fees</b><b>Complete</b></span>
-                <div class="meter"><i class="width-100"></i></div>
+            <div class="workspace-tabs" role="group" aria-label="Select an illustrative LPI workspace">
+              <button class="workspace-tab" type="button" data-workspace="plan" aria-pressed="true">Plan review</button>
+              <button class="workspace-tab" type="button" data-workspace="inspection" aria-pressed="false">Field operations</button>
+              <button class="workspace-tab" type="button" data-workspace="gis" aria-pressed="false">Location intelligence</button>
+            </div>
+            <div class="workspace-grid">
+              <div class="side-panel" aria-hidden="true">
+                <div class="side-item active">Overview</div>
+                <div class="side-item">Plans</div>
+                <div class="side-item">Location</div>
+                <div class="side-item">Field work</div>
               </div>
-              <div class="case-row">
-                <span><b>Plan routing</b><b>Complete</b></span>
-                <div class="meter"><i class="width-100"></i></div>
-              </div>
-              <div class="case-row">
-                <span><b>Fire &amp; zoning review</b><b>In progress</b></span>
-                <div class="meter"><i class="width-64"></i></div>
-              </div>
-              <div class="case-row">
-                <span><b>Inspection scheduling</b><b>Pending</b></span>
-                <div class="meter"><i class="width-18"></i></div>
+              <div class="case-panel" aria-live="polite">
+                <h2 id="workspace-checklist-title">Review checklist</h2>
+                <div class="case-row">
+                  <span><b data-workspace-label="0">Application &amp; fees</b><b data-workspace-value="0">Complete</b></span>
+                  <div class="meter"><i data-workspace-meter="0" class="width-100"></i></div>
+                </div>
+                <div class="case-row">
+                  <span><b data-workspace-label="1">Plan routing</b><b data-workspace-value="1">Complete</b></span>
+                  <div class="meter"><i data-workspace-meter="1" class="width-100"></i></div>
+                </div>
+                <div class="case-row">
+                  <span><b data-workspace-label="2">Fire &amp; zoning review</b><b data-workspace-value="2">In progress</b></span>
+                  <div class="meter"><i data-workspace-meter="2" class="width-64"></i></div>
+                </div>
+                <div class="case-row">
+                  <span><b data-workspace-label="3">Inspection scheduling</b><b data-workspace-value="3">Pending</b></span>
+                  <div class="meter"><i data-workspace-meter="3" class="width-18"></i></div>
+                </div>
               </div>
             </div>
           </div>
@@ -913,5 +966,73 @@
       <span>Product landing-page prototype</span>
     </div>
   </footer>
+  <script>
+    const workspaceViews = {
+      plan: {
+        title: 'Building permit plan review',
+        status: 'Technical review in progress',
+        checklist: 'Review checklist',
+        rows: [
+          ['Application & fees', 'Complete', 'width-100'],
+          ['Plan routing', 'Complete', 'width-100'],
+          ['Fire & zoning review', 'In progress', 'width-64'],
+          ['Inspection scheduling', 'Pending', 'width-18']
+        ]
+      },
+      inspection: {
+        title: 'Restaurant inspection field work',
+        status: 'Inspector assigned',
+        checklist: 'Field checklist',
+        rows: [
+          ['Inspection request', 'Scheduled', 'width-100'],
+          ['Inspector assignment', 'Complete', 'width-100'],
+          ['Field findings', 'In progress', 'width-64'],
+          ['Correction follow-up', 'Pending', 'width-18']
+        ]
+      },
+      gis: {
+        title: 'Site permit location review',
+        status: 'Location context available',
+        checklist: 'Location review',
+        rows: [
+          ['Address validation', 'Complete', 'width-100'],
+          ['Parcel and jurisdiction', 'Complete', 'width-100'],
+          ['Zoning context', 'In progress', 'width-64'],
+          ['Inspection territory', 'Ready', 'width-82']
+        ]
+      }
+    };
+
+    const workspaceTabs = document.querySelectorAll('.workspace-tab');
+    const workspaceTitle = document.querySelector('#workspace-title');
+    const workspaceStatus = document.querySelector('#workspace-status');
+    const workspaceChecklist = document.querySelector('#workspace-checklist-title');
+
+    function selectWorkspace(viewName) {
+      const view = workspaceViews[viewName];
+      workspaceTabs.forEach((tab) => {
+        tab.setAttribute('aria-pressed', String(tab.dataset.workspace === viewName));
+      });
+      workspaceTitle.textContent = view.title;
+      workspaceStatus.textContent = view.status;
+      workspaceChecklist.textContent = view.checklist;
+      view.rows.forEach((row, index) => {
+        document.querySelector(`[data-workspace-label="${index}"]`).textContent = row[0];
+        document.querySelector(`[data-workspace-value="${index}"]`).textContent = row[1];
+        document.querySelector(`[data-workspace-meter="${index}"]`).className = row[2];
+      });
+    }
+
+    workspaceTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectWorkspace(tab.dataset.workspace));
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? workspaceTabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + workspaceTabs.length) % workspaceTabs.length;
+        workspaceTabs[nextIndex].focus();
+        selectWorkspace(workspaceTabs[nextIndex].dataset.workspace);
+      });
+    });
+  </script>
 </body>
 </html>

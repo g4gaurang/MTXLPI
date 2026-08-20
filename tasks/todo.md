@@ -38,3 +38,10 @@ The platform\-agnostic copy and architecture visual pass HTML validation, a Ligh
 ## Review
 
 HTML parsing and whitespace validation pass. Browser testing confirms desktop and 400px mobile layouts, anchor navigation, no horizontal overflow, keyboard and mouse operation for each capability detail card, and no browser console errors.
+
+## Interactive Hero Update
+
+* [x] Confirm that the deployed hero visual and card interactions need stronger visual prominence.
+* [ ] Add a visible permitting-focused buyer image alongside the workspace.
+* [ ] Add keyboard-accessible workspace views for plan review, inspections, and GIS.
+* [ ] Validate the revised desktop and mobile experience.
